@@ -5,10 +5,21 @@ import numpy as np
 
 from param import *
 
+import os
+import warnings
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
+warnings.simplefilter(action='ignore',category=FutureWarning)
+
+print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
+
+physical_devices = tf.config.experimental.list_physical_devices('GPU')
+tf.config.experimental.set_memory_growth(physical_devices[0], True)
+
+
 
 def model_cnn():
     inputs = tf.keras.layers.Input(IMAGE_SIZE)
-    x = tf.keras.layers.BatchNormalization()(inputs)
+    x = tf.keras.layers.Lambda(lambda x:x/255)(inputs)
     x = tf.keras.layers.Conv2D(
         32, kernel_size=(3, 3), activation='relu')(x)
     x = tf.keras.layers.MaxPooling2D(pool_size=(2, 2))(x)
