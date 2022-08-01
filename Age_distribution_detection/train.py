@@ -7,6 +7,15 @@ import cv2
 from param import *
 from dataset import Dataset
 from model import model_cnn
+import os
+import warnings
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
+warnings.simplefilter(action='ignore',category=FutureWarning)
+
+print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
+
+physical_devices = tf.config.experimental.list_physical_devices('GPU')
+tf.config.experimental.set_memory_growth(physical_devices[0], True)
 
 
 callbacks = [

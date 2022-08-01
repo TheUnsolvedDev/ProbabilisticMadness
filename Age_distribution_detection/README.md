@@ -1,13 +1,12 @@
 # UTK Face age Prediction:
 
+Model: "sequential"
 ```
-Model: "model"
 _________________________________________________________________
  Layer (type)                Output Shape              Param #   
 =================================================================
- input_1 (InputLayer)        [(None, 128, 128, 1)]     0         
-                                                                 
- lambda (Lambda)             (None, 128, 128, 1)       0         
+ batch_normalization (BatchN  (None, 128, 128, 1)      4         
+ ormalization)                                                   
                                                                  
  conv2d (Conv2D)             (None, 126, 126, 32)      320       
                                                                  
@@ -37,18 +36,14 @@ _________________________________________________________________
                                                                  
  dropout (Dropout)           (None, 256)               0         
                                                                  
- batch_normalization (BatchN  (None, 256)              1024      
- ormalization)                                                   
-                                                                 
- dense_2 (Dense)             (None, 2)                 514       
-                                                                 
- independent_normal (Indepen  ((None, 1),              0         
- dentNormal)                  (None, 1))                         
+ dense_2 (Dense)             (None, 1)                 257       
                                                                  
 =================================================================
-Total params: 2,814,722
-Trainable params: 2,814,210
-Non-trainable params: 512
-_________________________________________________________________
 ```
+
+Total params: 2,813,445 \
+Trainable params: 2,813,443 \
+Non-trainable params: 2
+_________________________________________________________________
+
 Dataset: (UTK_Face Dataset)[https://www.kaggle.com/datasets/jangedoo/utkface-new]
