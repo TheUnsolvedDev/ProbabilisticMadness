@@ -1,5 +1,6 @@
 # UTK Face age Prediction:
 
+```
 Model: "model"
 _________________________________________________________________
  Layer (type)                Output Shape              Param #   
@@ -49,6 +50,5 @@ Total params: 2,814,722
 Trainable params: 2,814,210
 Non-trainable params: 512
 _________________________________________________________________
-
-
+```
 Dataset: (UTK_Face Dataset)[https://www.kaggle.com/datasets/jangedoo/utkface-new]
