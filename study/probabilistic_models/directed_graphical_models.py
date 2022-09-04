@@ -16,3 +16,5 @@ if __name__ == '__main__':
     print(model)
     
     print(model.sample(10))
+
+    print(model.prob([1,1]))
