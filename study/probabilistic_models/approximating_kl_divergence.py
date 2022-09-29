@@ -15,9 +15,11 @@ if __name__ == '__main__':
     datasetB = weather_B.sample(36500)
     print(datasetB)
     print(div)
+
     print(tf.reduce_mean(tf.math.log(
         weather_A.prob(datasetA)/weather_B.prob(datasetA))))
     print(tf.reduce_mean(weather_A.log_prob(
         datasetA) - weather_B.log_prob(datasetA)))
+    
     print(tfp.vi.monte_carlo_variational_loss(
         weather_B.log_prob, weather_A, 36500,gradient_estimator = gradient_estimator))
