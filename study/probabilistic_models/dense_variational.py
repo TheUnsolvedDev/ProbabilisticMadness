@@ -59,3 +59,13 @@ if __name__ == '__main__':
     print('Prior Variance:',model_prior.variance().numpy())
     print('Posterior mean:',model_posterior.mean().numpy())
     print('Posterior covariance:',model_posterior.covariance().numpy())
+
+    plt.scatter(x_train,y_train,alpha = 0.4,label = 'data')
+    for _ in range(10):
+        y_model = model(x_train)
+        if _ == 0:
+            plt.plot(x_train,y_model,color = 'red',alpha = 0.8,label = 'model')
+        else:
+            plt.plot(x_train,y_model,color = 'red',alpha = 0.8)
+    plt.legend()
+    plt.show()
