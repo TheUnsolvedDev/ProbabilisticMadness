@@ -27,7 +27,7 @@ model_prob2 = tf.keras.models.Sequential(
 model_prob3 = tf.keras.models.Sequential(
     [tf.keras.layers.Dense(8, input_shape=(1,),
                            activation='sigmoid'),
-     tf.keras.layers.Dense(
+     tf.keras.layers.Dense( 
          tfp.layers.IndependentNormal.params_size(event_shape=1)),
      tfp.layers.IndependentNormal(event_shape=1)])
 
