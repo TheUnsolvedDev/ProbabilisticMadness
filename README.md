@@ -1,2 +1,2 @@
 # ProbabilisticMadness
-Bayesian Statistic
+Bayesian Statistics
